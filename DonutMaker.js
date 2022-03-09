@@ -25,9 +25,13 @@ export default class DonutMaker {
         }
     }
 
+    bake() {
+     DonutMaker.donutCount =+ DonutMaker.donutMultiplier;
+        spawnSpinningDonut();
+        updateText();
+    }
 
-
-
+    
      addToDonutMultiplierCount(){
         if (this.donutCount >= this.donutMultiplierCost){
         this.donutMultiplier ++;
