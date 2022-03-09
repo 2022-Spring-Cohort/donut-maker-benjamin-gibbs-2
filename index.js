@@ -18,9 +18,9 @@ const addAutoClickBtn = document.querySelector(".autoClicker");
 const autoDisplay = document.querySelector(".totalAutoClickerCount");
 const addMulitBtn = document.querySelector(".donutMultiplier");
 const mulitDisplay = document.querySelector(".totalDonutMultiplierCount");
+const showAutoClickerPrice = document.querySelector(".auto-clicker-display");
 
-
-
+//    showAutoClickerPrice.innerText = autoClicker;
 
 addDonutBtn.addEventListener("click", () => {
   donutMaker.addToDonutCount();
@@ -31,6 +31,7 @@ addDonutBtn.addEventListener("click", () => {
 addAutoClickBtn.addEventListener("click", () =>{
   donutMaker.addToAutoClickerCount();
   autoDisplay.innerText = "Auto Clicker Count: " + donutMaker.autoClicker;
+  showAutoClickerPrice.innerText = "the next upgrade will cost " + donutMaker.autoClickerCost + " donuts";
   totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
 })
 
@@ -39,7 +40,7 @@ addAutoClickBtn.addEventListener("click", () =>{
 
 addMulitBtn.addEventListener("click", () =>{
   donutMaker.addToDonutMultiplierCount();
-  mulitDisplay.innerText = "multipr Count: " + donutMaker.donutMultiplier + " Next Cost: " + donutMaker.donutMultiplierCost;
+  mulitDisplay.innerText = "Mutlipliers purchased : " + donutMaker.donutMultiplier + "\nNext Mutliplier Cost: " + donutMaker.donutMultiplierCost;
   totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
 })
 

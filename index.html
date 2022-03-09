@@ -4,21 +4,34 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css">
   <title>Donut Clicker</title>
 </head>
+<header>
+  <nav class="navDrop">
+    <ul>
+      <li>Fred the Baker Baking Company</li>
+      <a href="cookie clicker"><li>cookie Clicker game orig.</li></a>
+      <li>contact info</li>
+    </ul>
+  </nav>
+</header>
 <body>
 <h1>Welcome to Donut Clicker!</h1>
 <div class="MainDonutSection">
   <h1 class="totalDonutCount"></h1>
-  <button class="donutButton">Click Me to make a Donut!</button>
+  <img src="images/Pink-Donut.svg" class="donutButton">
 </div>
 <div class="AutoClickerSection">
-  <h1 class="totalAutoClickerCount"></h1>
+  <h2 class="totalAutoClickerCount"></h2>
+  <h2 class="auto-clicker-display"></h2>
   <button class="autoClicker">Buy an AutoClicker</button>
 </div>
 <div class="DonutMultiplierSection">
-  <h1 class="totalDonutMultiplierCount"></h1>
-  <button class="donutMultiplier">Buy a DonutMultiplier</button>
+  <h2>Purchase some mutlipliers:</h2>
+  <img src="images/donoughts.svg" class="donutMultiplier">
+  <h2 class="totalDonutMultiplierCount"></h2>
+
 </div>
 <div class="container"></div>
 <script src="./index.js" type="module"></script>

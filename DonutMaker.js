@@ -4,7 +4,7 @@ export default class DonutMaker {
 
 
     constructor(donutCount, donutMultiplier, autoClicker){
-    this.donutCount = 0;
+    this.donutCount = 99;
     this.donutMultiplier = 0;
     this.donutMultiplierCost = 10;
     this.autoClicker = 0;
@@ -32,8 +32,8 @@ export default class DonutMaker {
         if (this.donutCount >= this.donutMultiplierCost){
         this.donutMultiplier ++;
         this.donutCount -= this.donutMultiplierCost;
-        this.donutMultiplierCost = Math.round(this.donutMultiplierCost * 1.1);
-        console.log(this.donutMultiplierCost + "test");
+        this.donutMultiplierCost = Math.round(this.donutMultiplierCost * 1.10);  //THIS IS THE CORRECT NUMBER FOR THIS CALCULATION
+//        console.log(this.donutMultiplierCost + "test"); ---THIS IS NOT NEEDED, BUT DOES CONSOLE OUT
     }
         else {
 console.log("You fcker");
@@ -48,9 +48,10 @@ console.log("You fcker");
         this.donutCount -= this.autoClickerCost;
         this.autoClickerCost = Math.round(this.autoClickerCost * 1.1);
 
+
     }
         else {
-console.log("You need more donuts to purchase an AutoClicker");
+console.log("You need " + this.autoClickerCost + " donuts to purchase the next AutoClicker upgrade");
 }
 }
     activateAutoClickers(){
@@ -58,5 +59,9 @@ console.log("You need more donuts to purchase an AutoClicker");
         this.addToDonutCount();
         }
         console.log(this.autoClicker);
+    }
+
+    getAutoClickerCount() {
+    return autoClicker;
     }
 }
