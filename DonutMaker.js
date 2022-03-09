@@ -81,7 +81,7 @@ console.log("You need " + this.autoClickerCost + " donuts to purchase the next A
 
 
     disableDonutMutliplier() {
-    const mutliplierBtn = document.querySelector(".donutMultiplierButton");
+    const mutliplierBtn = document.querySelector(".donutMultiplier");
     if (this.donutCount < this.donutMultiplierCost) {
         mutliplierBtn.disabled = true;
     }

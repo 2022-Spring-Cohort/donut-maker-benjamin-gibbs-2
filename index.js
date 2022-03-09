@@ -49,7 +49,7 @@ addAutoClickBtn.addEventListener("click", () =>{
 
 addMulitBtn.addEventListener("click", () =>{
   donutMaker.addToDonutMultiplierCount();
-  mulitDisplay.innerText = "Mutlipliers purchased : " + donutMaker.donutMultiplier + "\nNext Mutliplier Cost: " + donutMaker.donutMultiplierCost +  "\nDonuts earned per Click: " + Math.pow(1.2, donutMaker.donutMultiplier);
+  mulitDisplay.innerText = "Mutlipliers purchased : " + donutMaker.donutMultiplier + "\nNext Mutliplier Cost: " + donutMaker.donutMultiplierCost +  "\nDonuts earned per Click: " + (Math.pow(1.2, (donutMaker.donutMultiplier))).toFixed(3);
   totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
 })
 
