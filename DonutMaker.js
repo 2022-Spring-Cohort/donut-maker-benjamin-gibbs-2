@@ -46,7 +46,7 @@ console.log("You fcker");
         if (this.donutCount >= this.autoClickerCost){
         this.autoClicker ++;
         this.donutCount -= this.autoClickerCost;
-        this.autoClickerCost = Math.round(this.autoClickerCost * 1.1);
+        this.autoClickerCost = Math.round(this.autoClickerCost * 1.10);
 
 
     }
@@ -63,5 +63,30 @@ console.log("You need " + this.autoClickerCost + " donuts to purchase the next A
 
     getAutoClickerCount() {
     return autoClicker;
+    }
+
+    resetGame() {
+    location.reload();
+    }
+
+    disableAutoClicker() {
+    const autoClickerBtn = document.querySelector(".autoClicker");
+    if (this.donutCount < this.autoClickerCost) {
+        autoClickerBtn.disabled = true;
+    }
+    else {
+        autoClickerBtn.disabled = false;
+    }
+    }
+
+
+    disableDonutMutliplier() {
+    const mutliplierBtn = document.querySelector(".donutMultiplierButton");
+    if (this.donutCount < this.donutMultiplierCost) {
+        mutliplierBtn.disabled = true;
+    }
+    else {
+        mutliplierBtn.disabled = false;
+    }
     }
 }

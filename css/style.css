@@ -1,24 +1,30 @@
 .donutButton {
 display: flex;
-width: 50%;
+width: 20em;
 height: auto;
 justify-content: left;
 align-items: left;
-margin: auto;
+
 margin-top: -10px;
-
-
 }
 
 
 .donutMultiplier{
 display: flex;
-width: 50%;
+width: 15em;
+height: auto;;
+justify-content: left;
+align-items: left;
+
+margin-top: -10px;
+}
+
+.resetButton{
+display: flex;
+width: 20em;
 height: auto;
 justify-content: left;
 align-items: left;
-margin: auto;
+
 margin-top: -10px;
-
-
 }

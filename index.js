@@ -8,7 +8,10 @@ const donutMaker = new DonutMaker();
 // donutMaker.addToDonutCount()
 setInterval(function(){
   donutMaker.activateAutoClickers();
-  totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
+    donutMaker.disableAutoClicker();
+  totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount) ;
+//  +
+//  "\nDonuts earned per Click: " + Math.pow(1.2, donutMaker.donutMultiplier);
 },1000);
 
 
@@ -19,8 +22,13 @@ const autoDisplay = document.querySelector(".totalAutoClickerCount");
 const addMulitBtn = document.querySelector(".donutMultiplier");
 const mulitDisplay = document.querySelector(".totalDonutMultiplierCount");
 const showAutoClickerPrice = document.querySelector(".auto-clicker-display");
+const resetGame = document.querySelector(".resetButton");
 
 //    showAutoClickerPrice.innerText = autoClicker;
+
+resetGame.addEventListener("click", () => {
+donutMaker.resetGame();
+})
 
 addDonutBtn.addEventListener("click", () => {
   donutMaker.addToDonutCount();
@@ -29,9 +37,10 @@ addDonutBtn.addEventListener("click", () => {
 
 
 addAutoClickBtn.addEventListener("click", () =>{
+
   donutMaker.addToAutoClickerCount();
   autoDisplay.innerText = "Auto Clicker Count: " + donutMaker.autoClicker;
-  showAutoClickerPrice.innerText = "the next upgrade will cost " + donutMaker.autoClickerCost + " donuts";
+  showAutoClickerPrice.innerText = "the next upgrade will cost " + donutMaker.autoClickerCost + " donuts" ;
   totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
 })
 
@@ -40,7 +49,7 @@ addAutoClickBtn.addEventListener("click", () =>{
 
 addMulitBtn.addEventListener("click", () =>{
   donutMaker.addToDonutMultiplierCount();
-  mulitDisplay.innerText = "Mutlipliers purchased : " + donutMaker.donutMultiplier + "\nNext Mutliplier Cost: " + donutMaker.donutMultiplierCost;
+  mulitDisplay.innerText = "Mutlipliers purchased : " + donutMaker.donutMultiplier + "\nNext Mutliplier Cost: " + donutMaker.donutMultiplierCost +  "\nDonuts earned per Click: " + Math.pow(1.2, donutMaker.donutMultiplier);
   totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
 })
 
