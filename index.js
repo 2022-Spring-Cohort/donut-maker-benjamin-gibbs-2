@@ -8,11 +8,32 @@ const donutMaker = new DonutMaker();
 // donutMaker.addToDonutCount()
 setInterval(function(){
   donutMaker.activateAutoClickers();
-    donutMaker.disableAutoClicker();
-  totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount) ;
-//  +
-//  "\nDonuts earned per Click: " + Math.pow(1.2, donutMaker.donutMultiplier);
+  donutMaker.disableAutoClicker();
+  totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
+  //  + "\nDonuts earned per Click: " + (Math.pow(1.2, (donutMaker.donutMultiplier))).toFixed(3);
+  //  "\nDonuts earned per Click: " + Math.pow(1.2, donutMaker.donutMultiplier);
+  setInterval(function () {
+    donutsSecond.innerText =
+      "Donuts earned per Click: " +
+      Math.pow(1.2, donutMaker.donutMultiplier).toFixed(3);
+        autoDisplay.innerText = "Auto Clicker Count: " + donutMaker.autoClicker;
+        showAutoClickerPrice.innerText =
+          "the next upgrade will cost " +
+          donutMaker.autoClickerCost +
+          " donuts";
+            mulitDisplay.innerText =
+              "Mutlipliers purchased : " +
+              donutMaker.donutMultiplier +
+              "\nNext Mutliplier Cost: " +
+              donutMaker.donutMultiplierCost; 
+  }, 150);
 },1000);
+
+setInterval (function(){
+  donutsSecond.innerText =
+    "Donuts earned per Click: " +
+    Math.pow(1.2, donutMaker.donutMultiplier).toFixed(3);
+},150);
 
 
 const addDonutBtn = document.querySelector(".donutButton");
@@ -23,7 +44,7 @@ const addMulitBtn = document.querySelector(".donutMultiplier");
 const mulitDisplay = document.querySelector(".totalDonutMultiplierCount");
 const showAutoClickerPrice = document.querySelector(".auto-clicker-display");
 const resetGame = document.querySelector(".resetButton");
-
+const donutsSecond = document.querySelector(".donutsPerSecond");
 //    showAutoClickerPrice.innerText = autoClicker;
 
 resetGame.addEventListener("click", () => {
@@ -39,8 +60,8 @@ addDonutBtn.addEventListener("click", () => {
 addAutoClickBtn.addEventListener("click", () =>{
 
   donutMaker.addToAutoClickerCount();
-  autoDisplay.innerText = "Auto Clicker Count: " + donutMaker.autoClicker;
-  showAutoClickerPrice.innerText = "the next upgrade will cost " + donutMaker.autoClickerCost + " donuts" ;
+  // autoDisplay.innerText = "Auto Clicker Count: " + donutMaker.autoClicker;
+  // showAutoClickerPrice.innerText = "the next upgrade will cost " + donutMaker.autoClickerCost + " donuts" ;
   totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
 })
 
@@ -49,7 +70,8 @@ addAutoClickBtn.addEventListener("click", () =>{
 
 addMulitBtn.addEventListener("click", () =>{
   donutMaker.addToDonutMultiplierCount();
-  mulitDisplay.innerText = "Mutlipliers purchased : " + donutMaker.donutMultiplier + "\nNext Mutliplier Cost: " + donutMaker.donutMultiplierCost +  "\nDonuts earned per Click: " + (Math.pow(1.2, (donutMaker.donutMultiplier))).toFixed(3);
+  // mulitDisplay.innerText = "Mutlipliers purchased : " + donutMaker.donutMultiplier + "\nNext Mutliplier Cost: " + donutMaker.donutMultiplierCost; 
+  // +  "\nDonuts earned per Click: " + (Math.pow(1.2, (donutMaker.donutMultiplier))).toFixed(3);
   totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
 })
 
@@ -58,4 +80,4 @@ addMulitBtn.addEventListener("click", () =>{
 
 
 
-;
+

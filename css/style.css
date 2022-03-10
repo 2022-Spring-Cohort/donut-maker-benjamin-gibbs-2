@@ -41,7 +41,17 @@ margin-top: -10px;
 
 .donutMultiplier{
 display: flex;
-width: 15em;
+width: 25em;
+height: auto;;
+justify-content: left;
+align-items: left;
+
+margin-top: -10px;
+}
+
+.autoClicker {
+    display: flex;
+width: 25em;
 height: auto;;
 justify-content: left;
 align-items: left;
@@ -57,4 +67,11 @@ justify-content: left;
 align-items: left;
 
 margin-top: -10px;
+}
+
+
+.navDrop {
+    display: flex;
+    justify-content: space-evenly;
+    
 }
