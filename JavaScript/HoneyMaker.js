@@ -1,6 +1,6 @@
 export default class HoneyMaker {
   constructor(honeyCount, honeyMultiplier, autoClicker) {
-    this.honeyCount = 99;
+    this.honeyCount = 0;
     this.honeyMultiplier = 0;
     this.honeyMultiplierCost = 10;
     this.autoClicker = 0;
