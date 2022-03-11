@@ -5,23 +5,23 @@ const honeyMaker = new HoneyMaker();
 setInterval(function () {
   honeyMaker.activateAutoClickers();
   honeyMaker.disableAutoClicker();
-  totalDisplay.innerText = "Honey jars: " + Math.round(honeyMaker.honeyCount);
+  totalDisplay.innerText = "Honey jars: " + numberWithCommas(Math.round(honeyMaker.honeyCount));
 
   setInterval(function () {
     honeyPerSecond.innerText =
       "Honey jars earned per Click: " +
-      Math.pow(1.2, honeyMaker.honeyMultiplier).toFixed(3);
-    autoDisplay.innerText = "Worker Bees purchased: " + honeyMaker.autoClicker;
+       numberWithCommas(Math.pow(1.2, honeyMaker.honeyMultiplier).toFixed(3));
+    autoDisplay.innerText = "Worker Bees purchased: " +  numberWithCommas(honeyMaker.autoClicker);
     showAutoClickerPrice.innerText =
       "Next Worker Bee will cost " +
-      honeyMaker.autoClickerCost +
+       numberWithCommas(honeyMaker.autoClickerCost) +
       " jars of honey";
     mulitDisplay.innerText =
-      "Forager group purchased : " + honeyMaker.honeyMultiplier;
+      "Forager groups purchased : " +  numberWithCommas(honeyMaker.honeyMultiplier);
 
     multiCount.innerText =
       "Next group of Forager Bees will cost " +
-      honeyMaker.honeyMultiplierCost +
+       numberWithCommas(honeyMaker.honeyMultiplierCost) +
       " jars of honey";
   }, 150);
 }, 1000);
@@ -48,7 +48,7 @@ resetGame.addEventListener("click", () => {
 });
 
 addHoneyBtn.addEventListener("click", () => {
-  honeyMaker.addToDonutCount();
+  honeyMaker.addToHoneyCount();
   totalDisplay.innerText = "Honey jars: " + Math.round(honeyMaker.honeyCount);
 });
 
@@ -59,7 +59,11 @@ addAutoClickBtn.addEventListener("click", () => {
 });
 
 addMulitBtn.addEventListener("click", () => {
-  honeyMaker.addToDonutMultiplierCount();
+  honeyMaker.addToHoneyMultiplierCount();
 
   totalDisplay.innerText = "Honey jars: " + Math.round(honeyMaker.honeyCount);
 });
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}

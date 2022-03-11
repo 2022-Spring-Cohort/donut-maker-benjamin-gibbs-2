@@ -7,7 +7,7 @@ export default class HoneyMaker {
     this.autoClickerCost = 100;
   }
 
-  addToDonutCount() {
+  addToHoneyCount() {
     this.honeyCount++;
 
     if (this.honeyMultiplier == 0) {
@@ -17,7 +17,7 @@ export default class HoneyMaker {
     }
   }
 
-  addToDonutMultiplierCount() {
+  addToHoneyMultiplierCount() {
     if (this.honeyCount >= this.honeyMultiplierCost) {
       this.honeyMultiplier++;
       this.honeyCount -= this.honeyMultiplierCost;
@@ -41,7 +41,7 @@ export default class HoneyMaker {
   
   activateAutoClickers() {
     for (let i = -0; i < this.autoClicker; i++) {
-      this.addToDonutCount();
+      this.addToHoneyCount();
     }
     console.log(this.autoClicker);
   }
@@ -63,7 +63,7 @@ export default class HoneyMaker {
     }
   }
 
-  disableDonutMutliplier() {
+  disableHoneyMutliplier() {
     const mutliplierBtn = document.querySelector(".donutMultiplier");
     if (this.honeyCount < this.honeyMultiplierCost) {
       mutliplierBtn.disabled = true;
