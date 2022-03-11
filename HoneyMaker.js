@@ -1,89 +1,74 @@
 export default class HoneyMaker {
-
-
-
-
-    constructor(honeyCount, honeyMultiplier, autoClicker){
+  constructor(honeyCount, honeyMultiplier, autoClicker) {
     this.honeyCount = 99;
     this.honeyMultiplier = 0;
     this.honeyMultiplierCost = 10;
     this.autoClicker = 0;
     this.autoClickerCost = 100;
+  }
+
+  addToDonutCount() {
+    this.honeyCount++;
+
+    if (this.honeyMultiplier == 0) {
+      this.honeyCount = this.honeyCount;
+    } else {
+      this.honeyCount += Math.pow(1.2, this.honeyMultiplier);
     }
+  }
 
-
-
-    addToDonutCount() {
-        this.honeyCount ++;
-
-        if (this.honeyMultiplier == 0) {
-        this.honeyCount = this.honeyCount;
-
-        }
-        else { this.honeyCount += Math.pow(1.2, this.honeyMultiplier);
-
-        }
+  addToDonutMultiplierCount() {
+    if (this.honeyCount >= this.honeyMultiplierCost) {
+      this.honeyMultiplier++;
+      this.honeyCount -= this.honeyMultiplierCost;
+      this.honeyMultiplierCost = Math.round(this.honeyMultiplierCost * 1.1);
     }
+  }
 
-
-
-
-     addToDonutMultiplierCount(){
-        if (this.honeyCount >= this.honeyMultiplierCost){
-        this.honeyMultiplier ++;
-        this.honeyCount -= this.honeyMultiplierCost;
-        this.honeyMultiplierCost = Math.round(this.honeyMultiplierCost * 1.10);
+  addToAutoClickerCount() {
+    if (this.honeyCount >= this.autoClickerCost) {
+      this.autoClicker++;
+      this.honeyCount -= this.autoClickerCost;
+      this.autoClickerCost = Math.round(this.autoClickerCost * 1.1);
+    } else {
+      console.log(
+        "You need " +
+          this.autoClickerCost +
+          " jars of Honey to purchase the next AutoClicker upgrade"
+      );
     }
-
-}
-
-
-
-    addToAutoClickerCount(){
-        if (this.honeyCount >= this.autoClickerCost){
-        this.autoClicker ++;
-        this.honeyCount -= this.autoClickerCost;
-        this.autoClickerCost = Math.round(this.autoClickerCost * 1.10);
-
-
+  }
+  
+  activateAutoClickers() {
+    for (let i = -0; i < this.autoClicker; i++) {
+      this.addToDonutCount();
     }
-        else {
-console.log("You need " + this.autoClickerCost + " jars of Honey to purchase the next AutoClicker upgrade");
-}
-}
-    activateAutoClickers(){
-        for (let i = -0; i < this.autoClicker; i++) {
-        this.addToDonutCount();
-        }
-        console.log(this.autoClicker);
-    }
+    console.log(this.autoClicker);
+  }
 
-    getAutoClickerCount() {
+  getAutoClickerCount() {
     return autoClicker;
-    }
+  }
 
-    resetGame() {
+  resetGame() {
     location.reload();
-    }
+  }
 
-    disableAutoClicker() {
+  disableAutoClicker() {
     const autoClickerBtn = document.querySelector(".autoClicker");
     if (this.honeyCount < this.autoClickerCost) {
-        autoClickerBtn.disabled = true;
+      autoClickerBtn.disabled = true;
+    } else {
+      autoClickerBtn.disabled = false;
     }
-    else {
-        autoClickerBtn.disabled = false;
-    }
-    }
+  }
 
-
-    disableDonutMutliplier() {
+  disableDonutMutliplier() {
     const mutliplierBtn = document.querySelector(".donutMultiplier");
     if (this.honeyCount < this.honeyMultiplierCost) {
-        mutliplierBtn.disabled = true;
+      mutliplierBtn.disabled = true;
+    } else {
+      mutliplierBtn.disabled = false;
     }
-    else {
-        mutliplierBtn.disabled = false;
-    }
-    }
+  }
 }
