@@ -1,83 +1,65 @@
+import HoneyMaker from "./HoneyMaker.js";
 
-import DonutMaker from "./DonutMaker.js";
+const honeyMaker = new HoneyMaker();
 
+setInterval(function () {
+  honeyMaker.activateAutoClickers();
+  honeyMaker.disableAutoClicker();
+  totalDisplay.innerText = "Honey jars: " + Math.round(honeyMaker.honeyCount);
 
-
-const donutMaker = new DonutMaker();
-// let donutCount = donutMaker.donutCount;
-// donutMaker.addToDonutCount()
-setInterval(function(){
-  donutMaker.activateAutoClickers();
-  donutMaker.disableAutoClicker();
-  totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
-  //  + "\nDonuts earned per Click: " + (Math.pow(1.2, (donutMaker.donutMultiplier))).toFixed(3);
-  //  "\nDonuts earned per Click: " + Math.pow(1.2, donutMaker.donutMultiplier);
   setInterval(function () {
-    donutsSecond.innerText =
-      "Donuts earned per Click: " +
-      Math.pow(1.2, donutMaker.donutMultiplier).toFixed(3);
-        autoDisplay.innerText = "Auto Clicker Count: " + donutMaker.autoClicker;
-        showAutoClickerPrice.innerText =
-          "the next upgrade will cost " +
-          donutMaker.autoClickerCost +
-          " donuts";
-            mulitDisplay.innerText =
-              "Mutlipliers purchased : " +
-              donutMaker.donutMultiplier +
-              "\nNext Mutliplier Cost: " +
-              donutMaker.donutMultiplierCost; 
+    honeyPerSecond.innerText =
+      "Honey jars earned per Click: " +
+      Math.pow(1.2, honeyMaker.honeyMultiplier).toFixed(3);
+    autoDisplay.innerText = "Worker Bees purchased: " + honeyMaker.autoClicker;
+    showAutoClickerPrice.innerText =
+      "Next Worker Bee will cost " +
+      honeyMaker.autoClickerCost +
+      " jars of honey";
+    mulitDisplay.innerText =
+      "Forager group purchased : " + honeyMaker.honeyMultiplier;
+
+    multiCount.innerText =
+      "Next group of Forager Bees will cost " +
+      honeyMaker.honeyMultiplierCost +
+      " jars of honey";
   }, 150);
-},1000);
+}, 1000);
 
-setInterval (function(){
-  donutsSecond.innerText =
-    "Donuts earned per Click: " +
-    Math.pow(1.2, donutMaker.donutMultiplier).toFixed(3);
-},150);
+setInterval(function () {
+  honeyPerSecond.innerText =
+    "Honey jars earned per Click: " +
+    Math.pow(1.2, honeyMaker.honeyMultiplier).toFixed(3);
+}, 150);
 
-
-const addDonutBtn = document.querySelector(".donutButton");
-const totalDisplay = document.querySelector(".totalDonutCount")
+const addHoneyBtn = document.querySelector(".honeyButton");
+const totalDisplay = document.querySelector(".totalHoneyCount");
 const addAutoClickBtn = document.querySelector(".autoClicker");
 const autoDisplay = document.querySelector(".totalAutoClickerCount");
-const addMulitBtn = document.querySelector(".donutMultiplier");
-const mulitDisplay = document.querySelector(".totalDonutMultiplierCount");
+const addMulitBtn = document.querySelector(".honeyMultiplier");
+const mulitDisplay = document.querySelector(".totalHoneytMultiplierCount");
 const showAutoClickerPrice = document.querySelector(".auto-clicker-display");
 const resetGame = document.querySelector(".resetButton");
-const donutsSecond = document.querySelector(".donutsPerSecond");
-//    showAutoClickerPrice.innerText = autoClicker;
+const honeyPerSecond = document.querySelector(".honeyPerSecond");
+const multiCount = document.querySelector(".totalMutiCount");
 
 resetGame.addEventListener("click", () => {
-donutMaker.resetGame();
-})
+  honeyMaker.resetGame();
+});
 
-addDonutBtn.addEventListener("click", () => {
-  donutMaker.addToDonutCount();
-  totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
-})
+addHoneyBtn.addEventListener("click", () => {
+  honeyMaker.addToDonutCount();
+  totalDisplay.innerText = "Honey jars: " + Math.round(honeyMaker.honeyCount);
+});
 
+addAutoClickBtn.addEventListener("click", () => {
+  honeyMaker.addToAutoClickerCount();
 
-addAutoClickBtn.addEventListener("click", () =>{
+  totalDisplay.innerText = "Honey jars: " + Math.round(honeyMaker.honeyCount);
+});
 
-  donutMaker.addToAutoClickerCount();
-  // autoDisplay.innerText = "Auto Clicker Count: " + donutMaker.autoClicker;
-  // showAutoClickerPrice.innerText = "the next upgrade will cost " + donutMaker.autoClickerCost + " donuts" ;
-  totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
-})
+addMulitBtn.addEventListener("click", () => {
+  honeyMaker.addToDonutMultiplierCount();
 
-
-
-
-addMulitBtn.addEventListener("click", () =>{
-  donutMaker.addToDonutMultiplierCount();
-  // mulitDisplay.innerText = "Mutlipliers purchased : " + donutMaker.donutMultiplier + "\nNext Mutliplier Cost: " + donutMaker.donutMultiplierCost; 
-  // +  "\nDonuts earned per Click: " + (Math.pow(1.2, (donutMaker.donutMultiplier))).toFixed(3);
-  totalDisplay.innerText = "Donut Count: " + Math.round(donutMaker.donutCount);
-})
-
-
-
-
-
-
-
+  totalDisplay.innerText = "Honey jars: " + Math.round(honeyMaker.honeyCount);
+});
