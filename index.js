@@ -1,76 +1,76 @@
 
-import DonutMaker from "./DonutMaker.js";
+import HoneyMaker from "./HoneyMaker.js";
 
 
 
-const donutMaker = new DonutMaker();
+const honeyMaker = new HoneyMaker();
 
 setInterval(function(){
-  donutMaker.activateAutoClickers();
-  donutMaker.disableAutoClicker();
-  totalDisplay.innerText = "Honey jars: " + Math.round(donutMaker.donutCount);
+  honeyMaker.activateAutoClickers();
+  honeyMaker.disableAutoClicker();
+  totalDisplay.innerText = "Honey jars: " + Math.round(honeyMaker.honeyCount);
 
   setInterval(function () {
-    donutsSecond.innerText =
+    honeyPerSecond.innerText =
       "Honey jars earned per Click: " +
-      Math.pow(1.2, donutMaker.donutMultiplier).toFixed(3);
-        autoDisplay.innerText = "Worker Bees purchased: " + donutMaker.autoClicker;
+      Math.pow(1.2, honeyMaker.honeyMultiplier).toFixed(3);
+        autoDisplay.innerText = "Worker Bees purchased: " + honeyMaker.autoClicker;
         showAutoClickerPrice.innerText =
           "Next Worker Bee will cost " +
-          donutMaker.autoClickerCost +
+          honeyMaker.autoClickerCost +
           " jars of honey";
             mulitDisplay.innerText =
               "Forager group purchased : " +
-              donutMaker.donutMultiplier;
+              honeyMaker.honeyMultiplier;
  
 
-              multiCount.innerText="Next group of Forager Bees will cost " + donutMaker.donutMultiplierCost + " jars of honey";
+              multiCount.innerText="Next group of Forager Bees will cost " + honeyMaker.honeyMultiplierCost + " jars of honey";
   }, 150);
 },1000);
 
 setInterval (function(){
-  donutsSecond.innerText =
+  honeyPerSecond.innerText =
     "Honey jars earned per Click: " +
-    Math.pow(1.2, donutMaker.donutMultiplier).toFixed(3);
+    Math.pow(1.2, honeyMaker.honeyMultiplier).toFixed(3);
 },150);
 
 
-const addDonutBtn = document.querySelector(".donutButton");
-const totalDisplay = document.querySelector(".totalDonutCount")
+const addHoneyBtn = document.querySelector(".honeyButton");
+const totalDisplay = document.querySelector(".totalHoneyCount")
 const addAutoClickBtn = document.querySelector(".autoClicker");
 const autoDisplay = document.querySelector(".totalAutoClickerCount");
-const addMulitBtn = document.querySelector(".donutMultiplier");
-const mulitDisplay = document.querySelector(".totalDonutMultiplierCount");
+const addMulitBtn = document.querySelector(".honeyMultiplier");
+const mulitDisplay = document.querySelector(".totalHoneytMultiplierCount");
 const showAutoClickerPrice = document.querySelector(".auto-clicker-display");
 const resetGame = document.querySelector(".resetButton");
-const donutsSecond = document.querySelector(".donutsPerSecond");
+const honeyPerSecond = document.querySelector(".honeyPerSecond");
 const multiCount = document.querySelector(".totalMutiCount");
 
 
 resetGame.addEventListener("click", () => {
-donutMaker.resetGame();
+honeyMaker.resetGame();
 })
 
-addDonutBtn.addEventListener("click", () => {
-  donutMaker.addToDonutCount();
-  totalDisplay.innerText = "Honey jars: " + Math.round(donutMaker.donutCount);
+addHoneyBtn.addEventListener("click", () => {
+  honeyMaker.addToDonutCount();
+  totalDisplay.innerText = "Honey jars: " + Math.round(honeyMaker.honeyCount);
 })
 
 
 addAutoClickBtn.addEventListener("click", () =>{
 
-  donutMaker.addToAutoClickerCount();
+  honeyMaker.addToAutoClickerCount();
 
-  totalDisplay.innerText = "Honey jars: " + Math.round(donutMaker.donutCount);
+  totalDisplay.innerText = "Honey jars: " + Math.round(honeyMaker.honeyCount);
 })
 
 
 
 
 addMulitBtn.addEventListener("click", () =>{
-  donutMaker.addToDonutMultiplierCount();
+  honeyMaker.addToDonutMultiplierCount();
 
-  totalDisplay.innerText = "Honey jars: " + Math.round(donutMaker.donutCount);
+  totalDisplay.innerText = "Honey jars: " + Math.round(honeyMaker.honeyCount);
 })
 
 
