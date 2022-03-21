@@ -4,10 +4,63 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donut Clicker</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Honey Harvest</title>
   </head>
+
+  <header></header>
+
   <body>
-    <div class="container"></div>
-    <script src="./index.js"></script>
+
+    <div class="navbar">
+      <a href="#home">Honey Harvest</a>
+      <a href="https://orteil.dashnet.org/cookieclicker/">Inspiration</a>
+      <div class="dropdown">
+        <button class="dropbtn">About Me</button>
+        <div class="dropdown-content">
+          <a href="#">Github</a>
+          <a href="#">linkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="welcomeTitle">
+      <h1>Welcome to the Honey Harvest!</h1>
+    </div>
+
+    <div class="mainHoneySection">
+      <h1 class="totalHoneyCount"></h1>
+      <img src="images/honey_pot.png" class="honeyButton" />
+      <h2 class="honeyPerSecond"></h2>
+    </div>
+
+
+    <div class="extras">
+      
+      <div class="autoClickerSection">
+        <h2>Purchase an automated Worker Bee:</h2>
+        <img src="images/honeycomb.png" class="autoClicker" />
+        <h3 class="totalAutoClickerCount"></h3>
+        <h3 class="auto-clicker-display"></h3>
+      </div>
+
+      <div class="honeyMultiplierSection">
+        <h2>Purchase a group of Forager Bees:</h2>
+        <img src="images/bumblebee_multi.png" class="honeyMultiplier" />
+        <h3 class="totalHoneytMultiplierCount"></h3>
+        <h3 class="totalMutiCount"></h3>
+      </div>
+
+    </div>
+
+    <div class="resetSection">
+      <h2>Too much honey!</h2>
+      <h3>Click the angry bee to reset the game:</h3>
+      <img src="images/Bumblebee_reset.png" class="resetButton" />
+    </div>
+
+    <script src="JavaScript/index.js" type="module"></script>
+  
   </body>
+
 </html>

@@ -1,0 +1,168 @@
+.honeyButton {
+  display: flex;
+  width: 20em;
+  height: auto;
+  justify-content: left;
+  align-items: left;
+  margin-top: -10px;
+}
+
+.mainHoneySection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.extras {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+h3.auto-clicker-display {
+  margin-top: 5px;
+}
+
+h3.totalAutoClickerCount {
+  margin-bottom: 0px;
+}
+
+h3.totalHoneytMultiplierCount {
+  margin-bottom: 0px;
+}
+
+h3.totalMutiCount {
+  margin-top: 5px;
+}
+
+.resetSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 40px;
+  margin-top: 0px;
+}
+
+.honeyMultiplier {
+  display: flex;
+  width: 25em;
+  height: auto;
+  justify-content: left;
+  align-items: left;
+
+  margin-top: -10px;
+}
+
+.autoClicker {
+  display: flex;
+  width: 25em;
+  height: auto;
+  justify-content: left;
+  align-items: left;
+
+  margin-top: -10px;
+}
+
+.resetButton {
+  display: flex;
+  width: 14em;
+  height: auto;
+  justify-content: left;
+  align-items: left;
+
+  margin-top: -10px;
+}
+
+.resetSection h2 {
+  margin: 0px;
+}
+
+.resetSection h3 {
+  margin-top: 0px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: pink;
+}
+
+.navbar a {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-size: 1em;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: inherit;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.resetButton:hover {
+  transform: scale(1.2);
+}
+
+.honeyButton:hover {
+  transform: scale(1.1);
+}
+
+.honeyMultiplier:hover {
+  transform: scale(1.1);
+}
+
+.autoClicker:hover {
+  transform: scale(1.1);
+}
+
+.welcomeTitle {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
